@@ -17,6 +17,6 @@ public static class CombatMath
 			throw new ArgumentOutOfRangeException(nameof(damageReductionScalar), "Damage reduction scalar must be less than or equal to 1.");
 		}
 		
-		return (int)((float)baseDamage * (extraDamageMultiplier + 1f) * damageReductionScalar);
+		return (int)((float)baseDamage * (extraDamageMultiplier) * damageReductionScalar);
 	}
 }
