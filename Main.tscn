@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu0a560jst8h3"]
+[gd_scene load_steps=7 format=3 uid="uid://cu0a560jst8h3"]
 
 [ext_resource type="PackedScene" uid="uid://gp3v2osx0b52" path="res://Player.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://cs0mjit30ohlc" path="res://Coin.tscn" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://cma3hh2np3js6" path="res://QuestLogUi.tscn" id="3_r0du0"]
 [ext_resource type="Script" uid="uid://bc62t5a8xnh55" path="res://HurtZoneSpawner.cs" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://boqgt4hhjmqep" path="res://HurtZone.tscn" id="5_fos0i"]
+[ext_resource type="Script" uid="uid://c3o2iisvt8vq4" path="res://Hud.cs" id="6_3dxm6"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("1_glv2v")]
+unique_name_in_owner = true
 position = Vector2(333, 235)
 
 [node name="Coin" parent="." instance=ExtResource("2_uu6xs")]
@@ -34,3 +42,25 @@ script = ExtResource("4_cm0pq")
 HurtZoneScene = ExtResource("5_fos0i")
 
 [node name="QuestLogUi" parent="." instance=ExtResource("3_r0du0")]
+layout_mode = 0
+
+[node name="Hud" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("6_3dxm6")
+
+[node name="DeathPanel" type="PanelContainer" parent="Hud"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(145.385, 47.975)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Hud/DeathPanel"]
+layout_mode = 2
+text = "You are dead!"
+horizontal_alignment = 1
