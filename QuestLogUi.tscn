@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cma3hh2np3js6"]
+
+[ext_resource type="Script" uid="uid://dojkir0gsuhkk" path="res://QuestLogUi.cs" id="1_64ehk"]
+[ext_resource type="PackedScene" uid="uid://ddqkx3dfwsjmj" path="res://QuestEntryUi.tscn" id="2_23ttl"]
+
+[node name="QuestLogUi" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_64ehk")
+QuestEntryUiScene = ExtResource("2_23ttl")

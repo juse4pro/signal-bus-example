@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddqkx3dfwsjmj"]
+
+[ext_resource type="Script" uid="uid://vytk7non5vh5" path="res://QuestEntryUi.cs" id="1_aupb7"]
+
+[node name="QuestEntryUi" type="HBoxContainer"]
+script = ExtResource("1_aupb7")
+
+[node name="QuestText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quest Test"
+
+[node name="StrikeThrough" type="ColorRect" parent="QuestText"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2

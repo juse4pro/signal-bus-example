@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://gp3v2osx0b52"]
+
+[ext_resource type="Texture2D" uid="uid://my5supbjjwp7" path="res://icon.svg" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://d2gv66i1v6uyp" path="res://Player.cs" id="2_kpjcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(128, 128)
+
+[node name="Player" type="Sprite2D"]
+texture = ExtResource("1_xhfnw")
+script = ExtResource("2_kpjcp")
+
+[node name="CollectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[connection signal="area_entered" from="CollectArea" to="." method="OnCollectAreaEntered"]
