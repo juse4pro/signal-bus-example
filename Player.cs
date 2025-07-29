@@ -10,7 +10,7 @@ public partial class Player : Node2D
 	private int _coinCounter = 0;
 	private float _aliveTime = 0f;
 	private bool _isAlive = true;
-	private int _health = 3;
+	private int _health = 100;
 	private float _deadTime = 0f;
 
 
@@ -64,12 +64,13 @@ public partial class Player : Node2D
 	}
 
 
-	public void Hurt()
+	public void Hurt(int damage)
 	{
 		if (!this._isAlive)
 			return;
 
-		this._health--;
+		this._health -= damage;
+		GD.Print($"Player hurt by {damage}! Current health: {this._health}");
 
 		if (this._health <= 0)
 			this.Die();

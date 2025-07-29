@@ -3,4 +3,30 @@
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Exclude C# source files -->
+    <Compile Remove="GameMath\**\*.cs" />
+
+    <!-- Exclude content files like images, JSON, etc. -->
+    <Content Remove="GameMath\**\*" />
+
+    <!-- Exclude files marked as None -->
+    <None Remove="GameMath\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Exclude C# source files -->
+    <Compile Remove="GameMath.Test\**\*.cs" />
+
+    <!-- Exclude content files like images, JSON, etc. -->
+    <Content Remove="GameMath.Test\**\*" />
+
+    <!-- Exclude files marked as None -->
+    <None Remove="GameMath.Test\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="GameMath\GameMath.csproj" />
+  </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GameMath;
 
 public partial class HurtZone : Node2D
 {
@@ -36,7 +37,10 @@ public partial class HurtZone : Node2D
 			if (overlappingArea.Owner is not Player player)
 				continue;
 
-			player.Hurt();
+			const int baseDamage = 10;
+			int scaledDamage = CombatMath.GetEffectiveDamage(baseDamage, 0f, 1f);
+			
+			player.Hurt(scaledDamage);
 		}
 
 		this.QueueFree();
